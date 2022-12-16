@@ -35,11 +35,9 @@ export default function Tesla(props) {
   
   useEffect(() => {
     const fetchData = async () => {
-      debugger
       const result = await apifun()
       console.log('result.data.data.rotationImg-------->', result.data.data.rotationImg)
       setData(result.data.data.rotationImg);
-
     };
 
     fetchData();
@@ -49,7 +47,7 @@ export default function Tesla(props) {
     // console.log(item);
     // history.push({ pathname: '/tesla/order', state: rotationImg})
   }
-  
+
   return (
     <Main>      
       <div className="title">特斯拉Tesla</div>
@@ -59,7 +57,9 @@ export default function Tesla(props) {
       >
         <div>
           <RotationChart rotationImg={rotationImg}></RotationChart>
-
+          {rotationImg.map(item => (
+            <li>{item.name}</li>
+          ))}
           <div className="teslaDrive">
             <h1>未来驾驶体验</h1>
             <h2>车辆自动召唤，跑车级百公里加速，在车里打游戏，免费到店体验特斯拉驾驶方式</h2>
