@@ -9,8 +9,10 @@ const RotationChart = (props) => {
 
   const { rotationImg } = props
   const navigate  = useNavigate ();
+
   useEffect(() => {
     setTimeout(() => {
+      
       new Swiper('.swiper-container', {
         loop: true,
         autoplay: {

@@ -8,6 +8,14 @@ const Find = lazy(() => import('../pages/Find'))
 
 // 路由懒加载报错：react-dom.development.js:19055 Uncaught Error: A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.
 // 懒加载的模式需要我们给他加上一层 Loading的提示加载组件
+// const withLoadingComponent = lement => props => {
+//   return (
+//     <React.Suspense fallback={<div>Loading...</div>}>
+//       <element {...props}></element>
+//     </React.Suspense>
+//   );
+// }
+
 const withLoadingComponent = (comp) => (
   <React.Suspense fallback={<div>Loading...</div>}>
     {comp}
