@@ -37,7 +37,7 @@ function HomeLayout(props) {
     <div>
       <Tab>
         <NavLink to="/find" className={({ isActive }) => isActive ? 'selected' : ''}>
-          <TabItem >
+          <TabItem>
             {
               pathname === '/find'
                 ? <img src={findActive} />
@@ -54,6 +54,16 @@ function HomeLayout(props) {
                 : <img src={tesla} />
             }
             <span>发现</span>
+          </TabItem>
+        </NavLink>
+        <NavLink to="/tesMap" className={({ isActive }) => isActive ? 'selected' : ''}>
+          <TabItem >
+            {
+              pathname === '/tesMap'
+                ? <img src={teslaActive} />
+                : <img src={tesla} />
+            }
+            <span>地图</span>
           </TabItem>
         </NavLink>
         
